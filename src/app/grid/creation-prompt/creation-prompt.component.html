@@ -1,0 +1,17 @@
+<div id="creation-prompt">
+    <div class="layout-name-container">
+        <input [(ngModel)]="layoutName" type="text">
+    </div>
+    <div class="dimensions-container">
+        <div class="width-dimension">
+            <input [(ngModel)]="widthDimension" type="number">
+        </div>
+        <div class="by-text">x</div>
+        <div class="height-dimension">
+            <input [(ngModel)]="heightDimension" type="number">
+        </div>
+    </div>
+    <div class="submit-button">
+        <button type="button" (click)="submitClick()">Submit</button>
+    </div>
+</div>

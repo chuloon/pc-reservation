@@ -1,0 +1,13 @@
+<div id="layout-container">
+    <div *ngIf="gridData" class="grid-container">
+        <div *ngFor="let row of gridData; let rowNumber = index" [attr.data-index]="rowNumber" class="grid-rows">
+            <div *ngFor="let column of getColumnArray(); let columnNumber = index" [attr.data-index]="columnNumber" class="block-container">
+                <app-block [blockData]="getBlockData(rowNumber, columnNumber)" [isCreateMode]="isCreateMode" (statusChange)="blockStatusChange($event, rowNumber, columnNumber)"></app-block>
+            </div>
+        </div>
+    </div>
+
+    <div class="mode-checkbox">
+        <input type="checkbox" [(ngModel)]="isCreateMode"> Edit Mode
+    </div>
+</div>

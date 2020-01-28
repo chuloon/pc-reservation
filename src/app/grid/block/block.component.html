@@ -1,0 +1,8 @@
+<div class="block" 
+    (click)="blockClick()" 
+    [ngClass]="{
+        'free': blockData.status == 'FREE',
+        'reserved': blockData.status == 'RESERVED',
+        'terrain' : blockData.status == 'TERRAIN'
+    }">
+</div>

@@ -1,0 +1,14 @@
+#layout-container {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+
+        .grid-rows {
+            display: flex;
+
+            .block-container {
+                margin: 3px;
+            }
+        }
+    }
+}

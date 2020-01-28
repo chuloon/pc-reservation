@@ -1,0 +1,19 @@
+.block {
+    width: 35px;
+    height: 35px;
+    border: 3px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.free {
+        background-color: green;
+    }
+
+    &.reserved {
+        background-color: red;
+    }
+
+    &.terrain {
+        background-color: black;
+    }
+}
