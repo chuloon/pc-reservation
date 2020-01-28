@@ -50,5 +50,11 @@ export class LayoutComponent implements OnInit {
     let blockData = this.getBlockData(rowNumber, columnNumber);
     blockData.status = newStatus;
     console.log(blockData);
+    this.gridService.updateGrid(this.layoutName, rowNumber, columnNumber, blockData).then((result) => {
+      console.log("update success")
+    })
+    .catch(ex => {
+      console.log(ex);
+    });
   }
 }

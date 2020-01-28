@@ -31,6 +31,13 @@ export class GridService {
     return this.firestore.collection(gridName).get()
   }
 
+  updateGrid = (gridName, rowNumber, columnNumber, blockData) => {
+    let item = {};
+    item[columnNumber] = blockData
+
+    return this.firestore.collection(gridName).doc("row-" + rowNumber).update(item);
+  }
+
   private createGridData = (grid: Grid) => {
     let retArray = [];
 
