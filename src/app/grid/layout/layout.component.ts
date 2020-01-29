@@ -10,7 +10,7 @@ import { GridService } from 'src/app/services/grid.service';
 export class LayoutComponent implements OnInit {
   layoutName: string;
   gridData: any[];
-  isCreateMode: boolean = true;
+  isCreateMode: boolean = false;
 
   constructor(private route: ActivatedRoute, private gridService: GridService) { }
 
@@ -27,8 +27,7 @@ export class LayoutComponent implements OnInit {
 
   loadGrid = () => {
     this.gridService.getGrid(this.layoutName).subscribe(gridData => {
-      this.gridData = gridData.docs.map(doc => doc.data());
-      console.log(this.gridData);
+      this.gridData = gridData;
     });
   }
 
@@ -49,9 +48,7 @@ export class LayoutComponent implements OnInit {
   blockStatusChange = (newStatus, rowNumber, columnNumber) => {
     let blockData = this.getBlockData(rowNumber, columnNumber);
     blockData.status = newStatus;
-    console.log(blockData);
     this.gridService.updateGrid(this.layoutName, rowNumber, columnNumber, blockData).then((result) => {
-      console.log("update success")
     })
     .catch(ex => {
       console.log(ex);

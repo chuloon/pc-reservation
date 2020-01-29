@@ -3,6 +3,7 @@
     [ngClass]="{
         'free': blockData.status == 'FREE',
         'reserved': blockData.status == 'RESERVED',
-        'terrain' : blockData.status == 'TERRAIN'
+        'terrain' : blockData.status == 'TERRAIN',
+        'reserve-mode': !isCreateMode
     }">
 </div>

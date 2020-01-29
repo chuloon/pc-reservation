@@ -5,15 +5,22 @@
     border-radius: 5px;
     cursor: pointer;
 
+    &.reserve-mode {
+        cursor: inherit;
+    }
+
     &.free {
         background-color: green;
+        cursor: pointer;
     }
 
     &.reserved {
         background-color: red;
+        cursor: pointer;
     }
 
     &.terrain {
         background-color: black;
+        cursor: pointer;
     }
 }

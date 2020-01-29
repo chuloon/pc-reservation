@@ -27,8 +27,10 @@ export class GridService {
     return Promise.all(promiseArray);
   }
 
-  getGrid = (gridName): Observable<firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>> => {
-    return this.firestore.collection(gridName).get()
+  getGrid = (gridName): Observable<unknown[]> => {
+    let data = this.firestore.collection(gridName).valueChanges();
+
+    return data;
   }
 
   updateGrid = (gridName, rowNumber, columnNumber, blockData) => {
